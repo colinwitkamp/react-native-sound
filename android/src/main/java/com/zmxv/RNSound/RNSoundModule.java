@@ -333,6 +333,18 @@ public class RNSoundModule extends ReactContextBaseJavaModule {
     // no op
   }
 
+  @ReactMethod
+  public void setMode(final String mode) {
+    AudioManager audioManager = (AudioManager)this.context.getSystemService(this.context.AUDIO_SERVICE);
+    audioManager.setMode(AudioManager.MODE_IN_CALL);
+
+    if (mode.equals("VideoChat")) { // on
+      audioManager.setSpeakerphoneOn(true);
+    } else if (mode.equals("VoiceChat")) { // Off
+      audioManager.setSpeakerphoneOn(false);
+    }
+  }
+
   @Override
   public Map<String, Object> getConstants() {
     final Map<String, Object> constants = new HashMap<>();
