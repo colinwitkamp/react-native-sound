@@ -215,7 +215,7 @@ Sound.setCategory = function(value, mixWithOthers = false) {
 };
 
 Sound.setMode = function(value) {
-  if (!IsAndroid && !IsWindows) {
+  if (!IsWindows) {
     RNSound.setMode(value);
   }
 };
