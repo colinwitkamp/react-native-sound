@@ -336,7 +336,7 @@ public class RNSoundModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setMode(final String mode) {
     AudioManager audioManager = (AudioManager)this.context.getSystemService(this.context.AUDIO_SERVICE);
-    audioManager.setMode(AudioManager.MODE_IN_CALL);
+    audioManager.setMode(AudioManager.STREAM_MUSIC);
 
     if (mode.equals("VideoChat")) { // on
       audioManager.setSpeakerphoneOn(true);
